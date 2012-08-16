@@ -96,18 +96,35 @@ public class MainActivity extends Activity {
 						break;
 					}
 				}
-				
-				Planet editGame = datasource.getGameById( gameId );
-				Intent editIndent = new Intent (this, AddGameActivity.class);
-				editIndent.putExtra("editGame", editGame);
-				startActivityForResult(editIndent, REQUEST_CODE);
+				if (mainListView.getCheckedItemCount() > 1) {
+					Toast.makeText(this, "Select one item to edit", Toast.LENGTH_SHORT).show();
+				} else {
+					Planet editGame = datasource.getGameById( gameId );
+					Intent editIndent = new Intent (this, AddGameActivity.class);
+					editIndent.putExtra("editGame", editGame);
+					startActivityForResult(editIndent, REQUEST_CODE);
+				}
 				break;
 			case R.id.menuitem4:
+				for (Planet game : planetList) {
+					game.setChecked(true);
+				}
+				
+				listAdapter = new PlanetArrayAdapter(this, planetList);
+				mainListView.setAdapter( listAdapter );
 				break;
 			case R.id.menuitem5:
-				MainActivity.this.finish();
+				for (Planet game : planetList) {
+					game.setChecked(false);
+				}
+				
+				listAdapter = new PlanetArrayAdapter(this, planetList);
+				mainListView.setAdapter( listAdapter );
 				break;
 	
+			case R.id.menuitem10:
+				MainActivity.this.finish();
+				break;
 			default:
 				break;
 		}
