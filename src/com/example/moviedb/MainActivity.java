@@ -50,6 +50,10 @@ public class MainActivity extends Activity {
 	    
 	    planetList = datasource.getAllGames(); //new ArrayList<Planet>();
 	    
+	    if (!(planetList != null && planetList.size() > 0)) {
+	    	Toast.makeText(this, "No item(s) in the list. Add items using the option menu.", Toast.LENGTH_SHORT).show();
+	    }
+	    
 	    // Set our custom array adapter as the ListView's adapter.
 	    listAdapter = new PlanetArrayAdapter(this, planetList);
 	    mainListView.setAdapter( listAdapter );
@@ -96,7 +100,7 @@ public class MainActivity extends Activity {
 						break;
 					}
 				}
-				if (mainListView.getCheckedItemCount() > 1) {
+				if (mainListView.getCheckedItemCount() > 1 || gameId != -1) {
 					Toast.makeText(this, "Select one item to edit", Toast.LENGTH_SHORT).show();
 				} else {
 					Planet editGame = datasource.getGameById( gameId );
