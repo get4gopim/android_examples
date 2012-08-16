@@ -1,0 +1,39 @@
+<resources>
+
+    <string name="app_name">gameshot.com</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">GAMESHOT</string>
+    <string name="menu1">Add Game</string>
+    <string name="menu2">Delete Game(s)</string>
+    <string name="menu3">Edit Game</string>
+    <string name="menu4">Contact Us</string>
+    <string name="menu5">Exit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_add_game">Add Game</string>
+     <string name="btnEdit">Edit</string>
+    
+    <string name="lblDefault">default</string>
+    <string name="lblGameName">Game Title</string>
+    <string name="lblGenere">Genere</string>
+    <string name="lblDVDType">DVD Type</string>
+    <string name="lblAvail">Availability</string>
+    <string name="lblRating">Rating</string>
+    
+    <string name="btnSave">Save</string>
+    <string name="btnCancel">Cancel</string>
+    
+     <string name="optAction">Action</string>
+     <string name="optAdv">Adventure</string>
+     <string name="optRace">Race</string>
+     <string name="optSports">Sports</string>
+     
+     <string name="optPSOne">PS One</string>
+     <string name="optPS2">PS2</string>
+     <string name="optPS3">PS3</string>
+     <string name="optPSVita">PS Vita</string>
+     <string name="optPC">PC</string>
+     
+      <string name="lblAvailable">Available</string>
+      <string name="lblNotAvail">Not Available</string>
+
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alignmentMode="alignBounds"
+    android:columnCount="2"
+    android:columnOrderPreserved="false"
+    android:useDefaultMargins="true" >
+
+    <TextView
+        android:layout_gravity="clip_horizontal"
+        android:paddingLeft="5dp"
+        android:text="@string/lblGameName"
+        android:textSize="16dip"
+        android:width="100dp" />
+
+    <EditText
+        android:id="@+id/txtTitle"
+        android:layout_gravity="clip_horizontal"
+        android:hint="@string/lblDefault"
+        android:inputType="text"
+        android:textSize="12dp"
+        android:width="300dp" />
+
+    <TextView
+        android:layout_gravity="clip_horizontal"
+        android:paddingLeft="5dp"
+        android:text="@string/lblDVDType"
+        android:textSize="16dip" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_gravity="fill_horizontal"
+        android:orientation="horizontal"
+        android:width="100dp" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_gravity="clip_horizontal"
+            android:checked="true"
+            android:text="@string/optPSOne" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_gravity="clip_horizontal"
+            android:text="@string/optPS2" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_gravity="clip_horizontal"
+            android:text="@string/optPS3" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_gravity="clip_horizontal"
+            android:text="@string/optPSVita" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_gravity="clip_horizontal"
+            android:text="@string/optPC" >
+        </RadioButton>
+    </RadioGroup>
+
+    <TextView
+        android:layout_gravity="clip_horizontal"
+        android:paddingLeft="5dp"
+        android:text="@string/lblGenere"
+        android:textSize="16dip" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_gravity="clip_horizontal"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/chk1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optAction" />
+
+        <CheckBox
+            android:id="@+id/chk2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optAdv" />
+
+        <CheckBox
+            android:id="@+id/chk3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optRace" />
+
+        <CheckBox
+            android:id="@+id/chk4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optSports" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_gravity="clip_horizontal"
+        android:paddingLeft="5dp"
+        android:text="@string/lblAvail"
+        android:textSize="16dip" />
+
+    <Switch
+        android:id="@+id/togglebutton"
+        android:layout_gravity="clip_horizontal"
+        android:textOff="@string/lblNotAvail"
+        android:textOn="@string/lblAvailable" />
+
+    <TextView
+        android:layout_gravity="clip_horizontal"
+        android:paddingLeft="5dp"
+        android:text="@string/lblRating"
+        android:textSize="16dip" />
+
+    <SeekBar
+        android:id="@+id/seekRate"
+        android:layout_gravity="clip_horizontal"
+        android:max="100"
+        android:maxWidth="200dp"
+        android:layout_width="200dp"
+        android:progress="0"
+        android:secondaryProgress="0" />
+
+    <Button
+        android:layout_gravity="clip_horizontal"
+        android:onClick="btnSaveHandler"
+        android:text="@string/btnSave"
+        android:width="80dp" />
+
+    <Button
+        android:layout_gravity="clip_horizontal"
+        android:onClick="btnCancelHandler"
+        android:text="@string/btnCancel"
+        android:width="80dp" />
+
+</GridLayout>
