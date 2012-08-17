@@ -15,7 +15,7 @@ public class CommentsDataSource {
 	private SQLiteDatabase database;
 	private MySQLiteHelper dbHelper;
 	private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-			MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_GENERE, MySQLiteHelper.COLUMN_GAMETYPE, MySQLiteHelper.COLUMN_AVAIL, MySQLiteHelper.COLUMN_RATING };
+			MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_GENERE, MySQLiteHelper.COLUMN_GAMETYPE, MySQLiteHelper.COLUMN_AVAIL, MySQLiteHelper.COLUMN_RATING, MySQLiteHelper.COLUMN_REL_DATE };
 
 	public CommentsDataSource(Context context) {
 		dbHelper = new MySQLiteHelper(context);
@@ -38,6 +38,7 @@ public class CommentsDataSource {
 		values.put(MySQLiteHelper.COLUMN_GAMETYPE, p.getGameType());
 		values.put(MySQLiteHelper.COLUMN_AVAIL, p.getAvail());
 		values.put(MySQLiteHelper.COLUMN_RATING, p.getRating());
+		values.put(MySQLiteHelper.COLUMN_REL_DATE, p.getRelDate());
 		
 		long insertId = database.insert(MySQLiteHelper.TABLE_GAMES, null, values);
 
@@ -56,6 +57,7 @@ public class CommentsDataSource {
 		values.put(MySQLiteHelper.COLUMN_GAMETYPE, p.getGameType());
 		values.put(MySQLiteHelper.COLUMN_AVAIL, p.getAvail());
 		values.put(MySQLiteHelper.COLUMN_RATING, p.getRating());
+		values.put(MySQLiteHelper.COLUMN_REL_DATE, p.getRelDate());
 		
 		database.update(MySQLiteHelper.TABLE_GAMES, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
 	}
@@ -101,6 +103,7 @@ public class CommentsDataSource {
 		game.setGameType(cursor.getString(3));
 		game.setAvail(cursor.getString(4));
 		game.setRating(cursor.getInt(5));
+		game.setRelDate(cursor.getString(6));
 		return game;
 	}
 }

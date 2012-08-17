@@ -27,8 +27,9 @@
         android:id="@+id/rowGenere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/CheckBox01"
         android:layout_centerInParent="true"
-        android:padding="10dp"
+        android:paddingRight="50dp"
         android:textSize="16sp" >
     </TextView>
 

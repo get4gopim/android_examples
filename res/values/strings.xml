@@ -22,6 +22,8 @@
     <string name="lblRating">Rating</string>
     <string name="lblReleaseDate">Released Date</string>
     
+    <string name="pink">#FF3399</string>
+    
     <string name="btnDatePick">Date</string>
     <string name="btnSave">Save</string>
     <string name="btnCancel">Cancel</string>
@@ -39,5 +41,8 @@
      
       <string name="lblAvailable">Available</string>
       <string name="lblNotAvail">Not Available</string>
+      
+      <string name="menuCancel">Cancel</string>
+      <string name="menuSave">Save</string>
 
 </resources>

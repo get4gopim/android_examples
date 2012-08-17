@@ -16,6 +16,7 @@ public class Planet implements Serializable {
     private String gameType;
     private String avail;
     private int rating;
+    private String relDate;
     
     public Planet() {}
     
@@ -35,6 +36,14 @@ public class Planet implements Serializable {
     
     public String getGameType() {
 		return gameType;
+	}
+
+	public String getRelDate() {
+		return relDate;
+	}
+
+	public void setRelDate(String relDate) {
+		this.relDate = relDate;
 	}
 
 	public void setGameType(String gameType) {

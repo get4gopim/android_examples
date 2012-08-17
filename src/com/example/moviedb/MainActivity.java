@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 	private List<Planet> planetList;
 	private ArrayAdapter<Planet> listAdapter;
 	private CommentsDataSource datasource;
+	private Menu menu;
 	
 	private static final int REQUEST_CODE = 10;
 	
@@ -51,7 +52,7 @@ public class MainActivity extends Activity {
 	    planetList = datasource.getAllGames(); //new ArrayList<Planet>();
 	    
 	    if (!(planetList != null && planetList.size() > 0)) {
-	    	Toast.makeText(this, "No item(s) in the list. Add items using the option menu.", Toast.LENGTH_SHORT).show();
+	    	Toast.makeText(this, "No item(s) in the list. Add items using the option menu.", Toast.LENGTH_LONG).show();
 	    }
 	    
 	    // Set our custom array adapter as the ListView's adapter.
@@ -61,8 +62,31 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		this.menu = menu;
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+	
+	private List<Planet> getSelectedItems() {
+		List<Planet> listSelectedGames = new ArrayList<Planet>();
+		for (int i=0;i<planetList.size();i++) {
+			Planet game = (Planet) mainListView.getAdapter().getItem(i);
+			if (game.isChecked()) {
+				listSelectedGames.add(game);
+			}
+		}
+		return listSelectedGames;
+	}
+	
+	private void refreshList() {
+		planetList = datasource.getAllGames();
+	    listAdapter = new PlanetArrayAdapter(this, planetList);
+	    mainListView.setAdapter( listAdapter );
+	}
+	
+	private void refreshList(List<Planet> planetList) {
+	    listAdapter = new PlanetArrayAdapter(this, planetList);
+	    mainListView.setAdapter( listAdapter );
 	}
 
 	@Override
@@ -73,34 +97,27 @@ public class MainActivity extends Activity {
 				startActivityForResult(intent, REQUEST_CODE);
 				break;
 			case R.id.menuitem2:
-				List<Planet> listDeletedGames = new ArrayList<Planet>();
-				for (int i=0;i<planetList.size();i++) {
-					Planet game = (Planet) mainListView.getAdapter().getItem(i);
-					if (game.isChecked()) {
-						listDeletedGames.add(game);
+				List<Planet> listSelectedGames = getSelectedItems();
+				
+				if (listSelectedGames.size() == 0) {
+					Toast.makeText(this, "Select atleast one item to delete", Toast.LENGTH_SHORT).show();
+				} else {
+					for (Planet game : listSelectedGames) {
+						datasource.deleteGame(game);
 					}
+					refreshList();				
+					Toast.makeText(this, listSelectedGames.size() +" Game(s) deleted successfully", Toast.LENGTH_SHORT).show();
 				}
-				
-				for (Planet game : listDeletedGames) {
-					datasource.deleteGame(game);
-				}
-				
-				planetList = datasource.getAllGames();
-			    listAdapter = new PlanetArrayAdapter(this, planetList);
-			    mainListView.setAdapter( listAdapter );
-				
-				Toast.makeText(this, listDeletedGames.size() +" Game(s) deleted successfully", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.menuitem3:
 				long gameId = -1;
-				for (int i=0;i<planetList.size();i++) {
-					Planet game = (Planet) mainListView.getAdapter().getItem(i);
-					if (game.isChecked()) {
-						gameId = game.getId();
-						break;
-					}
+				List<Planet> listSelectedItems = getSelectedItems();
+				if (listSelectedItems.size() > 0) {
+					Planet game = (Planet) listSelectedItems.get(0);
+					gameId = game.getId();
 				}
-				if (mainListView.getCheckedItemCount() > 1 || gameId != -1) {
+				
+				if (gameId == -1 || listSelectedItems.size() == 0 || listSelectedItems.size() > 1) {
 					Toast.makeText(this, "Select one item to edit", Toast.LENGTH_SHORT).show();
 				} else {
 					Planet editGame = datasource.getGameById( gameId );
@@ -114,18 +131,17 @@ public class MainActivity extends Activity {
 					game.setChecked(true);
 				}
 				
-				listAdapter = new PlanetArrayAdapter(this, planetList);
-				mainListView.setAdapter( listAdapter );
+				menu.getItem(2).setEnabled(false);
+				refreshList(planetList);
 				break;
 			case R.id.menuitem5:
 				for (Planet game : planetList) {
 					game.setChecked(false);
 				}
 				
-				listAdapter = new PlanetArrayAdapter(this, planetList);
-				mainListView.setAdapter( listAdapter );
+				menu.getItem(2).setEnabled(true);
+				refreshList(planetList);
 				break;
-	
 			case R.id.menuitem10:
 				MainActivity.this.finish();
 				break;

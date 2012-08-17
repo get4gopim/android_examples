@@ -15,6 +15,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	  public static final String COLUMN_GAMETYPE = "gameType";
 	  public static final String COLUMN_AVAIL = "avail";
 	  public static final String COLUMN_RATING = "rating";
+	  public static final String COLUMN_REL_DATE = "relDate";
 
 	  private static final String DATABASE_NAME = "commments.db";
 	  private static final int DATABASE_VERSION = 1;
@@ -27,6 +28,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	      + COLUMN_GAMETYPE + " text, "
 	      + COLUMN_RATING + " integer, "
 	      + COLUMN_AVAIL + " text, "
+	      + COLUMN_REL_DATE + " text, "
 	      + COLUMN_GENERE + " text);";
 
 	  public MySQLiteHelper(Context context) {

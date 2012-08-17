@@ -15,6 +15,7 @@ import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -31,7 +32,7 @@ public class AddGameActivity extends Activity {
 
 	private CommentsDataSource datasource;
 
-	private static String SEPERATOR = ",";
+	private static String SEPERATOR = ", ";
 	private Resources res;
 	private Planet editGame;
 
@@ -52,11 +53,13 @@ public class AddGameActivity extends Activity {
 			// Toast.LENGTH_LONG).show();
 
 			EditText txtTitle = (EditText) findViewById(R.id.txtTitle);
+			EditText txtRelDate = (EditText) findViewById(R.id.txtRelDate);
 			RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup1);
 			SeekBar seek = (SeekBar) findViewById(R.id.seekRate);
 			Switch toggleAvail = (Switch) findViewById(R.id.togglebutton);
 
 			txtTitle.setText(editGame.getName());
+			txtRelDate.setText(editGame.getRelDate());
 			seek.setProgress(editGame.getRating());
 			toggleAvail.setChecked(editGame.getAvail().equalsIgnoreCase(
 					res.getString(R.string.lblAvailable)));
@@ -111,7 +114,23 @@ public class AddGameActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		//Toast.makeText(this, "No options available", Toast.LENGTH_SHORT).show();
+		getMenuInflater().inflate(R.menu.activity_add_game, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menuSave:
+				btnSaveHandler (null);
+				break;
+			case R.id.menuCancel:
+				btnCancelHandler (null);
+				break;
+			default:
+				break;
+		}
+
 		return true;
 	}
 
@@ -124,6 +143,7 @@ public class AddGameActivity extends Activity {
 
 		Switch toggleAvail = (Switch) findViewById(R.id.togglebutton);
 		EditText txtTitle = (EditText) findViewById(R.id.txtTitle);
+		EditText txtRelDate = (EditText) findViewById(R.id.txtRelDate);
 		SeekBar seek = (SeekBar) findViewById(R.id.seekRate);
 		int rating = seek.getProgress();
 		String avail = toggleAvail.isChecked() ? res
@@ -136,6 +156,7 @@ public class AddGameActivity extends Activity {
 		planet.setRating(rating);
 		planet.setGenere(gameGenere);
 		planet.setAvail(avail);
+		planet.setRelDate(txtRelDate.getText().toString());
 
 		// Toast.makeText(this, planet.toString(), Toast.LENGTH_LONG).show();
 
