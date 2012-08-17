@@ -32,6 +32,8 @@
      <string name="optAdv">Adventure</string>
      <string name="optRace">Race</string>
      <string name="optSports">Sports</string>
+     <string name="opt3d">3D</string>
+     <string name="optMove">Move</string>
      
      <string name="optPSOne">PS One</string>
      <string name="optPS2">PS2</string>

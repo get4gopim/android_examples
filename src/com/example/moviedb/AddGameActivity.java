@@ -20,12 +20,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class AddGameActivity extends Activity {
@@ -102,9 +99,10 @@ public class AddGameActivity extends Activity {
 							.getString(R.string.optSports))) {
 						CheckBox chk4 = (CheckBox) findViewById(R.id.chk4);
 						chk4.setChecked(true);
-					} else {
-						CheckBox chk1 = (CheckBox) findViewById(R.id.chk1);
-						chk1.setChecked(true);
+					} else if (g.equalsIgnoreCase(res.getString(R.string.opt3d))) {
+						( (CheckBox) findViewById(R.id.chk5) ).setChecked(true);
+					} else if (g.equalsIgnoreCase(res.getString(R.string.optMove))) {
+						( (CheckBox) findViewById(R.id.chk6) ).setChecked(true);
 					}
 				}
 			}
@@ -202,6 +200,12 @@ public class AddGameActivity extends Activity {
 		}
 		if (chk4.isChecked()) {
 			genere.add(res.getString(R.string.optSports));
+		}
+		if ( ((CheckBox) findViewById(R.id.chk5)).isChecked()) {
+			genere.add(res.getString(R.string.opt3d));
+		}
+		if ( ((CheckBox) findViewById(R.id.chk6)).isChecked()) {
+			genere.add(res.getString(R.string.optMove));
 		}
 
 		String gameGenere = "";

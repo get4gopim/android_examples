@@ -8,6 +8,10 @@ import com.example.datasource.Planet;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +29,7 @@ public class MainActivity extends Activity {
 	private Menu menu;
 	
 	private static final int REQUEST_CODE = 10;
+	private static final int DIALOG_ALERT = 10;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -102,11 +107,7 @@ public class MainActivity extends Activity {
 				if (listSelectedGames.size() == 0) {
 					Toast.makeText(this, "Select atleast one item to delete", Toast.LENGTH_SHORT).show();
 				} else {
-					for (Planet game : listSelectedGames) {
-						datasource.deleteGame(game);
-					}
-					refreshList();				
-					Toast.makeText(this, listSelectedGames.size() +" Game(s) deleted successfully", Toast.LENGTH_SHORT).show();
+					showDialog(DIALOG_ALERT);
 				}
 				break;
 			case R.id.menuitem3:
@@ -165,6 +166,42 @@ public class MainActivity extends Activity {
 		        
 				Toast.makeText(this, data.getExtras().getString("returnKey1"), Toast.LENGTH_SHORT).show();
 			}
+		}
+	}
+	
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case DIALOG_ALERT:
+			// Create out AlterDialog
+			Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage("Are you sure to delete the selected item(s)?");
+			builder.setCancelable(true);
+			builder.setPositiveButton("Yes", new OkOnClickListener());
+			builder.setNegativeButton("No, no", new CancelOnClickListener());
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
+		return super.onCreateDialog(id);
+	}
+
+	private final class CancelOnClickListener implements
+			DialogInterface.OnClickListener {
+		public void onClick(DialogInterface dialog, int which) {
+			
+		}
+	}
+
+	private final class OkOnClickListener implements
+			DialogInterface.OnClickListener {
+		public void onClick(DialogInterface dialog, int which) {
+			List<Planet> listSelectedGames = getSelectedItems();
+			
+			for (Planet game : listSelectedGames) {
+				datasource.deleteGame(game);
+			}
+			refreshList();				
+			Toast.makeText(MainActivity.this, listSelectedGames.size() +" Game(s) deleted successfully", Toast.LENGTH_SHORT).show();
 		}
 	}
 	

@@ -103,6 +103,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/optSports" />
+        
+        <CheckBox
+            android:id="@+id/chk5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opt3d" />
+        
+        <CheckBox
+            android:id="@+id/chk6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optMove" />
     </LinearLayout>
 
     <TextView
