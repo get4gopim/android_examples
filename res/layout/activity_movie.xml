@@ -7,119 +7,125 @@
     android:columnOrderPreserved="false"
     android:useDefaultMargins="true" >
 
-    <LinearLayout
+    <!--
+         <LinearLayout
         android:id="@+id/LinearLayout01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal" >
+    -->
 
-        <GridLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alignmentMode="alignBounds"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:useDefaultMargins="true" >
+    <GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:useDefaultMargins="true" >
 
-            <TextView
-                style="@style/PinkText"
-                android:layout_gravity="clip_horizontal"
-                android:paddingLeft="5dp"
-                android:text="@string/lblMovieTitle"
-                android:textSize="16dip"
-                android:width="100dp" />
+        <TextView
+            style="@style/PinkText"
+            android:layout_gravity="clip_horizontal"
+            android:paddingLeft="5dp"
+            android:text="@string/lblMovieTitle"
+            android:textSize="16dip"
+            android:width="100dp" />
 
-            <EditText
-                android:id="@+id/txtTitle"
-                android:layout_gravity="clip_horizontal"
-                android:focusable="false"
-                android:hint="@string/lblNotfound"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:width="300dp" />
+        <EditText
+            android:id="@+id/txtTitle"
+            android:layout_gravity="clip_horizontal"
+            android:focusable="false"
+            android:hint="@string/lblNotfound"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
 
-            <TextView
-                style="@style/PinkText"
-                android:layout_gravity="clip_horizontal"
-                android:paddingLeft="5dp"
-                android:text="@string/lblActor"
-                android:textSize="16dip"
-                android:width="100dp" />
+        <TextView
+            style="@style/PinkText"
+            android:layout_gravity="clip_horizontal"
+            android:paddingLeft="5dp"
+            android:text="@string/lblActor"
+            android:textSize="16dip"
+            android:width="100dp" />
 
-            <EditText
-                android:id="@+id/txtActor"
-                android:layout_gravity="clip_horizontal"
-                android:focusable="false"
-                android:hint="@string/lblNotfound"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:width="300dp" />
+        <EditText
+            android:id="@+id/txtActor"
+            android:layout_gravity="clip_horizontal"
+            android:focusable="false"
+            android:hint="@string/lblNotfound"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
 
-            <TextView
-                style="@style/PinkText"
-                android:layout_gravity="clip_horizontal"
-                android:paddingLeft="5dp"
-                android:text="@string/lblActress"
-                android:textSize="16dip"
-                android:width="100dp" />
+        <TextView
+            style="@style/PinkText"
+            android:layout_gravity="clip_horizontal"
+            android:paddingLeft="5dp"
+            android:text="@string/lblActress"
+            android:textSize="16dip"
+            android:width="100dp" />
 
-            <EditText
-                android:id="@+id/txtActress"
-                android:layout_gravity="clip_horizontal"
-                android:focusable="false"
-                android:hint="@string/lblNotfound"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:width="300dp" />
+        <EditText
+            android:id="@+id/txtActress"
+            android:layout_gravity="clip_horizontal"
+            android:focusable="false"
+            android:hint="@string/lblNotfound"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
 
-            <TextView
-                style="@style/PinkText"
-                android:layout_gravity="clip_horizontal"
-                android:paddingLeft="5dp"
-                android:text="@string/lblDirBy"
-                android:textSize="16dip"
-                android:width="100dp" />
+        <TextView
+            style="@style/PinkText"
+            android:layout_gravity="clip_horizontal"
+            android:paddingLeft="5dp"
+            android:text="@string/lblDirBy"
+            android:textSize="16dip"
+            android:width="100dp" />
 
-            <EditText
-                android:id="@+id/txtDirBy"
-                android:layout_gravity="clip_horizontal"
-                android:focusable="false"
-                android:hint="@string/lblNotfound"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:width="300dp" />
+        <EditText
+            android:id="@+id/txtDirBy"
+            android:layout_gravity="clip_horizontal"
+            android:focusable="false"
+            android:hint="@string/lblNotfound"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
 
-            <TextView
-                style="@style/PinkText"
-                android:layout_gravity="clip_horizontal"
-                android:paddingLeft="5dp"
-                android:text="@string/lblMusicBy"
-                android:textSize="16dip"
-                android:width="100dp" />
+        <TextView
+            style="@style/PinkText"
+            android:layout_gravity="clip_horizontal"
+            android:paddingLeft="5dp"
+            android:text="@string/lblMusicBy"
+            android:textSize="16dip"
+            android:width="100dp" />
 
-            <EditText
-                android:id="@+id/txtMusicBy"
-                android:layout_gravity="clip_horizontal"
-                android:focusable="false"
-                android:hint="@string/lblNotfound"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:width="300dp" />
-
-           <!-- <ImageView
+        <EditText
+            android:id="@+id/txtMusicBy"
+            android:layout_gravity="clip_horizontal"
+            android:focusable="false"
+            android:hint="@string/lblNotfound"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
+    </GridLayout>
+    
+    <!--
+    <ImageView
                 android:id="@+id/imgMovie"
                 android:layout_columnSpan="2"
                 android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:layout_gravity="center"
-                android:contentDescription="@string/lblNotfound" /> -->
+                android:contentDescription="@string/lblNotfound" /> 
             
-        </GridLayout>
+       
     </LinearLayout>
+    -->
 
-    
+
     <LinearLayout
         android:id="@+id/LinearLayout02"
         android:layout_width="200dp"
@@ -133,8 +139,6 @@
             android:layout_height="300dp"
             android:layout_gravity="center"
             android:contentDescription="@string/lblNotfound" />
-        
     </LinearLayout>
-    
 
 </GridLayout>
