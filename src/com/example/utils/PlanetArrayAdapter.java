@@ -1,8 +1,6 @@
-package com.example.moviedb;
+package com.example.utils;
 
 import java.util.List;
-
-import com.example.datasource.Planet;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import com.example.domain.Planet;
+import com.example.moviedb.R;
 
 public class PlanetArrayAdapter extends ArrayAdapter<Planet> {
 
@@ -44,7 +45,7 @@ public class PlanetArrayAdapter extends ArrayAdapter<Planet> {
 			checkBox = (CheckBox) convertView.findViewById(R.id.CheckBox01);
 			
 			convertView.setTag(new PlanetViewHolder(textTitle, textGenere, checkBox));
-
+			
 			// If CheckBox is toggled, update the planet it is tagged with.
 			checkBox.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {

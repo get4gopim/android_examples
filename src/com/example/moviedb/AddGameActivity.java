@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import com.example.datasource.CommentsDataSource;
-import com.example.datasource.Planet;
+import com.example.domain.Planet;
 
 import android.os.Bundle;
 import android.app.Activity;

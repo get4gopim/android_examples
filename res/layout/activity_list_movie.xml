@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout06"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="clip_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/PinkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="@string/lblSearchBy"
+            android:textSize="16dip"
+            android:width="100dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSearchBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:width="100dp" />
+
+        <TextView
+            style="@style/PinkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="@string/lblSearchString"
+            android:textSize="16dip"
+            android:width="150dp" />
+
+        <EditText
+            android:id="@+id/txtSearchString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/lblSearchString"
+            android:inputType="text"
+            android:textSize="16dp"
+            android:width="300dp" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="5dp"
+            android:onClick="btnSearchHandler"
+            android:text="@string/btnSearch" >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout076"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="clip_horizontal"
+        android:orientation="horizontal" >
+
+        <ListView
+            android:id="@+id/movieListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

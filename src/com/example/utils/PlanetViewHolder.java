@@ -1,4 +1,4 @@
-package com.example.moviedb;
+package com.example.utils;
 
 import android.widget.CheckBox;
 import android.widget.TextView;

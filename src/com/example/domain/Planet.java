@@ -1,4 +1,4 @@
-package com.example.datasource;
+package com.example.domain;
 
 import java.io.Serializable;
 

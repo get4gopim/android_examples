@@ -6,14 +6,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_add_game">Add Game</string>
     <string name="btnEdit">Edit</string>
-    
     <string name="menu1">Add Game</string>
     <string name="menu2">Delete Game(s)</string>
     <string name="menu3">Edit Game</string>
     <string name="menu4">Select All</string>
     <string name="menu5">Unselect All</string>
+    <string name="menu6">Movie Service</string>
     <string name="menu10">Exit</string>
-    
     <string name="lblDefault">default</string>
     <string name="lblGameName">Game Title</string>
     <string name="lblGenere">Genere</string>
@@ -21,30 +20,46 @@
     <string name="lblAvail">Availability</string>
     <string name="lblRating">Rating</string>
     <string name="lblReleaseDate">Released Date</string>
-    
     <string name="pink">#FF3399</string>
-    
     <string name="btnDatePick">Date</string>
     <string name="btnSave">Save</string>
     <string name="btnCancel">Cancel</string>
-    
-     <string name="optAction">Action</string>
-     <string name="optAdv">Adventure</string>
-     <string name="optRace">Race</string>
-     <string name="optSports">Sports</string>
-     <string name="opt3d">3D</string>
-     <string name="optMove">Move</string>
-     
-     <string name="optPSOne">PS One</string>
-     <string name="optPS2">PS2</string>
-     <string name="optPS3">PS3</string>
-     <string name="optPSVita">PS Vita</string>
-     <string name="optPC">PC</string>
-     
-      <string name="lblAvailable">Available</string>
-      <string name="lblNotAvail">Not Available</string>
-      
-      <string name="menuCancel">Cancel</string>
-      <string name="menuSave">Save</string>
+    <string name="optAction">Action</string>
+    <string name="optAdv">Adventure</string>
+    <string name="optRace">Race</string>
+    <string name="optSports">Sports</string>
+    <string name="opt3d">3D</string>
+    <string name="optMove">Move</string>
+    <string name="optPSOne">PS One</string>
+    <string name="optPS2">PS2</string>
+    <string name="optPS3">PS3</string>
+    <string name="optPSVita">PS Vita</string>
+    <string name="optPC">PC</string>
+    <string name="lblAvailable">Available</string>
+    <string name="lblNotAvail">Not Available</string>
+    <string name="menuCancel">Cancel</string>
+    <string name="menuSave">Save</string>
+    <string name="title_activity_movie">Movie Web Service</string>
+    <string name="menuReset">Reset</string>
+    <string name="menuBack">Back</string>
+    <string name="lblSearchString">Search String</string>
+    <string name="lblSearchBy">Search By</string>
+    <string name="lblNotfound">Not Found</string>
+    <string name="btnSearch">Search</string>
+    <string name="lblMovieTitle">Movie Name</string>
+    <string name="lblActor">Actor</string>
+    <string name="lblActress">Actress</string>
+    <string name="lblMusicBy">Music By</string>
+    <string name="lblDirBy">Directed By</string>
+
+    <string-array name="planets_array">
+        <item>title</item>
+        <item>music</item>
+        <item>director</item>
+        <item>actor</item>
+        <item>actress</item>
+    </string-array>
+
+    <string name="title_activity_list_movie">Search Movies</string>
 
 </resources>
