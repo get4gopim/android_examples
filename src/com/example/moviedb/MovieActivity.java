@@ -60,6 +60,8 @@ public class MovieActivity extends Activity {
 	}
 
 	private void setMovieInfo(Movie movie) {
+		setTitle(movie.getTitle());
+		
 		txtTitle.setText(movie.getTitle());
 		txtActor.setText(movie.getActorName());
 		txtActress.setText(movie.getActressName());

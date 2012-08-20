@@ -56,6 +56,8 @@ public class ListMovieActivity extends Activity {
     	//MovieList movieList = ms.getMoviesByKey("title", "ala");
 
 		if (movieList != null && movieList.getData() != null && movieList.getData().size() > 0) {
+			Toast.makeText(ListMovieActivity.this, movieList.getData().size() + " movie(s) found !!", Toast.LENGTH_SHORT).show();
+			
 			listMovies = movieList.getData();
 		    listAdapter = new MovieArrayAdapter(this, listMovies);
 		    movieListView.setAdapter( listAdapter );
@@ -63,7 +65,7 @@ public class ListMovieActivity extends Activity {
 		    movieListView.setOnItemClickListener(new OnItemClickListener() {
 		    	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 		    		Movie movie = (Movie) movieListView.getItemAtPosition(position);
-		    		//Toast.makeText(ListMovieActivity.this, movie.getTitle(), Toast.LENGTH_SHORT).show();
+		    		
 		    		Intent i = new Intent(ListMovieActivity.this, MovieActivity.class);
 		    		i.putExtra("movie", movie);
 		    		startActivityForResult(i, REQUEST_CODE);

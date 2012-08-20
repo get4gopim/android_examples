@@ -29,11 +29,13 @@
         </activity>
         
         <activity
+            android:icon="@drawable/movie"
             android:name=".MovieActivity"
             android:label="@string/title_activity_movie" >
         </activity>
         
         <activity
+            android:icon="@drawable/movie"
             android:name=".ListMovieActivity"
             android:label="@string/title_activity_list_movie" >
         </activity>

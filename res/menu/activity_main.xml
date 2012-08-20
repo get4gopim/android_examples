@@ -15,11 +15,18 @@
     </item>
     
     <item
+        android:id="@+id/menuitem6"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/movie_search"
+        android:title="@string/menu6">
+    </item>
+    
+    <!-- <item
         android:id="@+id/menuitem3"
         android:showAsAction="ifRoom|withText"
         android:icon="@drawable/edit"
         android:title="@string/menu3">
-    </item>
+    </item>  -->
     
     <item
         android:id="@+id/menuitem4"
@@ -31,12 +38,6 @@
         android:id="@+id/menuitem5"
         android:showAsAction="never"
         android:title="@string/menu5">
-    </item>
-    
-    <item
-        android:id="@+id/menuitem6"
-        android:showAsAction="never"
-        android:title="@string/menu6">
     </item>
     
     <item

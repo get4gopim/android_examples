@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.datasource.CommentsDataSource;
+import com.example.domain.Movie;
 import com.example.domain.Planet;
 import com.example.utils.PlanetArrayAdapter;
 
@@ -18,9 +19,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends Activity {
 
@@ -46,6 +49,16 @@ public class MainActivity extends Activity {
 		
 		 // Find the ListView resource. 
 	    mainListView = (ListView) findViewById( R.id.mainListView );
+	    
+	    mainListView.setOnItemClickListener(new OnItemClickListener() {
+	    	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+	    		Planet editGame = (Planet) mainListView.getItemAtPosition(position);
+	    		
+	    		Intent i = new Intent(MainActivity.this, AddGameActivity.class);
+	    		i.putExtra("editGame", editGame);
+	    		startActivityForResult(i, REQUEST_CODE);
+	    	}
+	    });
 	    
 	    // Create and populate planets.
 	    /*planets = (Planet[]) getLastNonConfigurationInstance() ;
@@ -115,7 +128,7 @@ public class MainActivity extends Activity {
 					showDialog(DIALOG_ALERT);
 				}
 				break;
-			case R.id.menuitem3:
+			/*case R.id.menuitem3:
 				long gameId = -1;
 				List<Planet> listSelectedItems = getSelectedItems();
 				if (listSelectedItems.size() > 0) {
@@ -131,13 +144,13 @@ public class MainActivity extends Activity {
 					editIndent.putExtra("editGame", editGame);
 					startActivityForResult(editIndent, REQUEST_CODE);
 				}
-				break;
+				break;*/
 			case R.id.menuitem4:
 				for (Planet game : planetList) {
 					game.setChecked(true);
 				}
 				
-				menu.getItem(2).setEnabled(false);
+				//menu.getItem(2).setEnabled(false);
 				refreshList(planetList);
 				break;
 			case R.id.menuitem5:
@@ -145,7 +158,7 @@ public class MainActivity extends Activity {
 					game.setChecked(false);
 				}
 				
-				menu.getItem(2).setEnabled(true);
+				//menu.getItem(2).setEnabled(true);
 				refreshList(planetList);
 				break;
 			case R.id.menuitem6:

@@ -48,6 +48,7 @@ public class AddGameActivity extends Activity {
 		if (editGame != null) {
 			// Toast.makeText(this, editGame.getGenere(),
 			// Toast.LENGTH_LONG).show();
+			setTitle(editGame.getName());
 
 			EditText txtTitle = (EditText) findViewById(R.id.txtTitle);
 			EditText txtRelDate = (EditText) findViewById(R.id.txtRelDate);
@@ -165,14 +166,12 @@ public class AddGameActivity extends Activity {
 		}
 
 		datasource.close();
-		finish();
+		returnResult();
 	}
 
-	@Override
-	public void finish() {
+	private void returnResult() {
 		Intent data = new Intent();
 		data.putExtra("returnKey1", "Game Saved Successfully");
-		// data.putExtra("addedGame", addedGame);
 		setResult(RESULT_OK, data);
 		super.finish();
 	}
