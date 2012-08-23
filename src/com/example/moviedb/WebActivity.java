@@ -6,7 +6,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.feed.SyndFeedHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.datasource.MovieWebServiceImpl;
+import com.example.domain.Planet;
+import com.example.utils.PlanetArrayAdapter;
+import com.example.utils.SyndFeedListAdapter;
 import com.google.code.rome.android.repackaged.com.sun.syndication.feed.synd.SyndEntry;
 import com.google.code.rome.android.repackaged.com.sun.syndication.feed.synd.SyndFeed;
 
@@ -18,17 +20,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class WebActivity extends Activity {
 	
+	private ListView mainListView;
 	private SyndFeed feed;
 	private WebView wv;
 
+	private SyndFeedListAdapter listAdapter;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web);
+        setContentView(R.layout.activity_main);
+        
+        mainListView = (ListView) findViewById( R.id.mainListView );
+        
         
         new DownloadRssFeedTask().execute();
                 
@@ -46,18 +55,18 @@ public class WebActivity extends Activity {
         this.feed = feed;
 
         if (feed != null) {
-            TextView txtView = (TextView) findViewById( R.id.feedTitle );
-	        
-	        
-	        setTitle(feed.getTitle());
-	        
+        	setTitle(feed.getTitle());
+        	
+        	listAdapter = new SyndFeedListAdapter(this, feed);
+    	    mainListView.setAdapter( listAdapter );
+    	    
+    	    
+            /*TextView txtView = (TextView) findViewById( R.id.feedTitle );
 	        SyndEntry syndEntry = (SyndEntry) feed.getEntries().get(0);
-	        
 	        txtView.setText(syndEntry.getTitle());
-	        
 	        final String mimeType = "text/html";
 	        final String encoding = "UTF-8"; 
-	        wv.loadDataWithBaseURL("", syndEntry.getDescription().getValue(), mimeType, encoding, "");
+	        wv.loadDataWithBaseURL("", syndEntry.getDescription().getValue(), mimeType, encoding, "");*/
 	        
 	       /* ArrayAdapter<SyndEntry> adapter = new ArrayAdapter<SyndEntry>(this, android.R.layout.simple_list_item_1, feed.getEntries());
 	        setListAdapter(adapter);*/
