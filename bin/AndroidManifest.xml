@@ -22,22 +22,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name=".AddGameActivity"
             android:label="@string/title_activity_add_game" >
         </activity>
-        
         <activity
-            android:icon="@drawable/movie"
             android:name=".MovieActivity"
+            android:icon="@drawable/movie"
             android:label="@string/title_activity_movie" >
         </activity>
-        
         <activity
-            android:icon="@drawable/movie"
             android:name=".ListMovieActivity"
+            android:icon="@drawable/movie"
             android:label="@string/title_activity_list_movie" >
+        </activity>
+        <activity
+            android:name=".WebActivity"
+            android:label="@string/title_activity_web" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

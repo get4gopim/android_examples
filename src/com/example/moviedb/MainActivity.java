@@ -165,6 +165,10 @@ public class MainActivity extends Activity {
 				Intent movieIntent = new Intent(this, ListMovieActivity.class);
 				startActivity(movieIntent);
 				break;
+			case R.id.menuitem7:
+				Intent webIntent = new Intent(this, WebActivity.class);
+				startActivity(webIntent);
+				break;
 			case R.id.menuitem10:
 				MainActivity.this.finish();
 				break;
