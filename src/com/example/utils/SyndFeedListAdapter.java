@@ -55,9 +55,15 @@ public class SyndFeedListAdapter extends BaseAdapter {
 
             SyndContent description = syndEntry.getDescription();
             if (description != null) {
-            	WebView wv = (WebView) convertView.findViewById(R.id.webview);
-                t.setText(description.getValue());
-    	        wv.loadDataWithBaseURL("", description.getValue(), "text/html", "UTF-8", "");
+            	String content = description.getValue();
+            	if (content.indexOf("<") > 0) {
+            		content = content.substring(0, content.indexOf("<"));
+            	}
+            	t = (TextView) convertView.findViewById(R.id.feedDesc);
+            	t.setText (content);
+            	
+            	/*WebView wv = (WebView) convertView.findViewById(R.id.webview);
+    	        wv.loadDataWithBaseURL("", description.getValue(), "text/html", "UTF-8", "");*/
             }
         }
 

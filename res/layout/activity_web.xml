@@ -17,11 +17,19 @@
         android:id="@+id/feedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp" />
+        android:paddingLeft="30dp"
+        android:textSize="12sp" />
+    
+    <TextView
+        android:id="@+id/feedDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:textSize="14sp" />
 
-    <WebView
+    <!-- <WebView
         android:id="@+id/webview"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent" /> -->
 
 </LinearLayout>
