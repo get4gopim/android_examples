@@ -1,10 +1,11 @@
-package com.example.moviedb;
+package com.example.activities;
 
 import java.util.List;
 
 import com.example.datasource.MovieWebServiceImpl;
 import com.example.domain.Movie;
 import com.example.domain.MovieList;
+import com.example.activities.R;
 import com.example.utils.MovieArrayAdapter;
 
 import android.os.Bundle;

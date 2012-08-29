@@ -1,4 +1,4 @@
-package com.example.moviedb;
+package com.example.activities;
 
 import java.util.Collections;
 
@@ -7,6 +7,7 @@ import org.springframework.http.converter.feed.SyndFeedHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.domain.Planet;
+import com.example.activities.R;
 import com.example.utils.PlanetArrayAdapter;
 import com.example.utils.SyndFeedListAdapter;
 import com.google.code.rome.android.repackaged.com.sun.syndication.feed.synd.SyndEntry;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.domain.Movie;
 
-import com.example.moviedb.R;
+import com.example.activities.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

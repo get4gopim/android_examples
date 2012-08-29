@@ -21,25 +21,25 @@ public class Movie implements Serializable {
 	@Element
 	private String title;
 	
-	@Element
+	@Element (required=false)
 	private String type;
 	
-	@Element
+	@Element (required=false)
 	private boolean available;
 	
-	@Element
+	@Element (required=false)
 	private String actorName;
 	
-	@Element
+	@Element (required=false)
 	private String actressName;
 	
-	@Element
+	@Element (required=false)
 	private String musicDirector;
 	
-	@Element
+	@Element (required=false)
 	private String flimDirector;
 	
-	@Element
+	@Element (required=false)
 	private String imageUrl;
 	
 

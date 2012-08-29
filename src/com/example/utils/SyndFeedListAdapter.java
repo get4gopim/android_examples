@@ -1,6 +1,6 @@
 package com.example.utils;
 
-import com.example.moviedb.R;
+import com.example.activities.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.moviedb"
+    package="com.example.activities"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -37,9 +37,25 @@
             android:label="@string/title_activity_list_movie" >
         </activity>
         <activity
-            android:name=".WebActivity"
+            android:name="com.example.activities.WebActivity"
             android:label="@string/title_activity_web" >
         </activity>
+        
+        <activity
+            android:name=".NotificationReceiverActivity"
+            android:label="@string/title_notification" >
+        </activity>
+
+        <service
+            android:permission="android.permission.INTERNET"
+            android:name="com.example.services.MovieCollectorService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.example.services.MovieCollectorService" />
+            </intent-filter>
+        </service>
+        
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.domain.Planet;
-import com.example.moviedb.R;
+import com.example.activities.R;
 
 public class PlanetArrayAdapter extends ArrayAdapter<Planet> {
 

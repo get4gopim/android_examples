@@ -1,4 +1,4 @@
-package com.example.moviedb;
+package com.example.activities;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.domain.Movie;
+import com.example.activities.R;
 
 public class MovieActivity extends Activity {
 
@@ -31,6 +32,7 @@ public class MovieActivity extends Activity {
 	private String imageUrl;
 	
 	private Movie movie;
+	private long movieId;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,8 @@ public class MovieActivity extends Activity {
 		imgMovie = (ImageView) findViewById(R.id.imgMovie);
 		
 		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
+		
+		if (extras != null && extras.get("movie") != null) {
 			movie = (Movie) extras.get("movie");
 			setMovieInfo(movie);
 		} else {

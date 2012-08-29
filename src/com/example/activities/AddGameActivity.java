@@ -1,4 +1,4 @@
-package com.example.moviedb;
+package com.example.activities;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.example.datasource.CommentsDataSource;
 import com.example.domain.Planet;
+import com.example.activities.R;
 
 import android.os.Bundle;
 import android.app.Activity;
